@@ -55,7 +55,7 @@ public class MIP {
         MPObjective objective = solver.objective();
         for (int i = 0; i < numWorkers; i++) {
             for (int j = 0; j < numTasks; j++) {
-                objective.setCoefficient(x[i][j],costs[i*numWorkers+j]);
+                objective.setCoefficient(x[i][j],costs[i*numTasks+j]);
             }
         }
         objective.setMinimization();
@@ -66,7 +66,7 @@ public class MIP {
             for (int i = 0; i < numWorkers; i++) {
                 for (int j = 0; j < numTasks; j++) {
                     if (x[i][j].solutionValue() > 0.5) {
-                        System.out.println("Worker "+workers[i]+" assigned to task "+ (j+1)+".    Cost= "+costs[i*numWorkers+j] );
+                        System.out.println("Worker "+workers[i]+" assigned to task "+ (j+1)+".    Cost= "+costs[i*numTasks+j] );
                     }
                 }
             }
