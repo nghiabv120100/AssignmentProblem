@@ -84,6 +84,8 @@ public class TeamOfWorkersMIP {
             System.out.println("No solution found.");
         }
 
+
+
     }
 
 
