@@ -21,7 +21,7 @@ public class TeamOfWorkersMIP {
 
         int numWorkers =cost.length;
         int numTasks = cost[0].length;
-        MPSolver solver = MPSolver.createSolver("GLOP");
+        MPSolver solver = MPSolver.createSolver("GLOP"); //SCIP and GLOP
 
         MPVariable x[][] = new MPVariable[numWorkers][numTasks];
 
@@ -83,12 +83,5 @@ public class TeamOfWorkersMIP {
         } else {
             System.out.println("No solution found.");
         }
-
-
-
     }
-
-
-
-
 }

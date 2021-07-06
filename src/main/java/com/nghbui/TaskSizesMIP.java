@@ -27,7 +27,7 @@ public class TaskSizesMIP {
         int numWorkers = cost.length;
         int numTasks = cost[0].length;
 
-        MPSolver solver = MPSolver.createSolver("SCIP");
+        MPSolver solver = MPSolver.createSolver("SCIP"); //SCIP and GLOP
         MPVariable[][] x = new MPVariable[numWorkers][numTasks];
         for (int i=0; i<numWorkers;i++) {
             for (int j=0;j<numTasks;j++) {
@@ -74,13 +74,6 @@ public class TaskSizesMIP {
             System.out.println("Min: "+objective.value());
         } else {
             System.out.println("No solution found.");
-        }
-        System.out.println("----------------------------------------------------");
-        for (int i=0;i<numWorkers;i++) {
-            for (int j =0;j<numTasks;j++) {
-                System.out.print(x[i][j].solutionValue()+"  ");
-            }
-            System.out.println();
         }
     }
 }
